@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap");
+
+:root {
+  --main-background-t1: hsl(222, 26%, 31%);
+  --keypad-background-t1: hsl(223, 31%, 20%);
+  --screen-background-t1: hsl(224, 36%, 15%);
+  --key-bg-t1: hsl(225, 21%, 49%);
+  --key-bg-hover-t1: hsl(225, 21%, 60%);
+  --key-shadow-t1: hsl(224, 28%, 35%);
+  --toggle-key-t1: hsl(6, 63%, 50%);
+  --toggle-hover-t1: hsl(6, 70%, 65%);
+  --toggle-shadow-t1: hsl(6, 70%, 34%);
+  --orange-key-t1: hsl(30, 25%, 89%);
+  --orange-key-shadow-t1: hsl(28, 16%, 65%);
+  --text-grayish-blue-t1: hsl(221, 14%, 31%);
+
+  --background-t2: hsl(0, 0%, 90%);
+  --toggle-bg-t2: hsl(0, 5%, 81%);
+  --screen-bg-t2: hsl(0, 0%, 93%);
+  --key-bg-t2: hsl(185, 42%, 37%);
+  --key-bg-hover-t2: hsl(185, 42%, 47%);
+  --key-shadow-t2: hsl(185, 58%, 25%);
+  --orange-key-t2: hsl(25, 98%, 40%);
+  --orange-key-hover-t2: hsl(25, 98%, 50%);
+  --orange-shadow-t2: hsl(25, 99%, 27%);
+  --yellow-key-bg-t2: hsl(45, 7%, 89%);
+  --yellow-key-shadow-t2: hsl(35, 11%, 61%);
+  --text-gray-t2: hsl(60, 10%, 19%);
+
+  --bg-t3: hsl(268, 75%, 9%);
+  --screen-bg-t3: hsl(268, 71%, 12%);
+  --key-bg-t3: hsl(281, 89%, 26%);
+  --key-bg-hover-t3: hsl(281, 89%, 43%);
+  --key-shadow-t3: hsl(285, 91%, 52%);
+  --key-bg-toggle-t3: hsl(176, 100%, 44%);
+  --key-bg-hover-toggle-t3: hsl(176, 100%, 55%);
+  --key-shadow-toggle-t3: hsl(177, 92%, 70%);
+  --dark-key-bg-t3: hsl(268, 47%, 21%);
+  --dark-key-hover-bg-t3: hsl(268, 47%, 41%);
+  --dark-key-shadow-t3: hsl(290, 70%, 36%);
+
+  --light-yellow-text: hsl(52, 100%, 62%);
+  --dark-blue-text: hsl(198, 20%, 13%);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "League Spartan";
+  font-weight: 700;
+}
+
+body {
+  font-weight: 700;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--main-background-t1);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.display {
+  width: 500px;
+  height: 110px;
+  background-color: var(--screen-background-t1);
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 20px;
+  font-size: 40px;
+  border: none;
+}
+
+.keys {
+  width: 500px;
+  background-color: var(--keypad-background-t1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 25px;
+  gap: 25px;
+  border-radius: 7px;
+}
+
+.reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.equal {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+
+button {
+  background-color: var(--orange-key-shadow-t1);
+  border-radius: 10px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+
+.front {
+  display: block;
+  padding: 10px;
+  padding-top: 15px;
+  border-radius: 10px;
+  font-size: 32px;
+  background: var(--orange-key-t1);
+  color: var(--text-grayish-blue-t1);
+  transform: translateY(-4px);
+}
+
+button:active .front,
+button.pressed .front {
+  transform: translateY(-2px);
+  background-color: white;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 60px;
+  height: 20px;
+  background: var(--screen-background-t1);
+  border-radius: 50px;
+  padding: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: var(--toggle-key-t1);
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: var(--toggle-hover-t1);
+}
+
+.theme {
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.theme span {
+  letter-spacing: 6px;
+}
+
+.theme div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete,
+.reset {
+  background-color: var(--key-shadow-t1);
+}
+
+.delete .front,
+.reset .front {
+  background-color: var(--key-bg-t1);
+  color: white;
+  padding-top: 18px;
+  padding-bottom: 14px;
+  font-size: 24px;
+}
+
+.delete:active .front,
+.reset:active .front {
+  transform: translateY(-2px);
+  background-color: var(--key-bg-hover-t1);
+}
+
+.equal {
+  background-color: var(--toggle-shadow-t1);
+}
+
+.equal .front {
+  background-color: var(--toggle-key-t1);
+  color: white;
+  padding-top: 18px;
+  padding-bottom: 14px;
+  font-size: 24px;
+}
+
+.equal:active .front {
+  transform: translateY(-2px);
+  background-color: var(--toggle-hover-t1);
+}
+
+body.t2 {
+  background-color: var(--background-t2);
+}
+
+body.t2 .title {
+  color: var(--text-gray-t2);
+}
+
+body.t2 .display {
+  color: var(--text-gray-t2);
+  background-color: var(--screen-bg-t2);
+}
+
+body.t2 .keys {
+  background-color: var(--toggle-bg-t2);
+}
+
+body.t2 button {
+  background-color: var(--yellow-key-shadow-t2);
+}
+
+body.t2 .front {
+  background-color: var(--yellow-key-bg-t2);
+  color: var(--text-gray-t2);
+}
+
+body.t2 .equal {
+  background-color: var(--orange-shadow-t2);
+}
+
+body.t2 .equal .front {
+  background-color: var(--orange-key-t2);
+  color: white;
+}
+
+body.t2 .equal:active .front {
+  background-color: var(--orange-key-hover-t2);
+}
+
+body.t2 .delete,
+body.t2 .reset {
+  background-color: var(--key-shadow-t2);
+}
+
+body.t2 .delete .front,
+body.t2 .reset .front {
+  background-color: var(--key-bg-t2);
+  color: white;
+}
+
+body.t2 .delete:active .front,
+body.t2 .reset:active .front {
+  background-color: var(--key-bg-hover-t2);
+}
+
+body.t2 input[type="range"] {
+  background-color: var(--toggle-bg-t2);
+}
+
+body.t2 input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--orange-key-t2);
+}
+
+body.t2 input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: var(--orange-key-hover-t2);
+}
+
+body.t3 {
+  background-color: var(--bg-t3);
+}
+
+body.t3 .title {
+  color: var(--light-yellow-text);
+}
+
+body.t3 .display {
+  color: var(--light-yellow-text);
+  background-color: var(--screen-bg-t3);
+}
+
+body.t3 .keys {
+  background-color: var(--screen-bg-t3);
+}
+
+body.t3 button {
+  background-color: var(--dark-key-shadow-t3);
+}
+
+body.t3 .front {
+  background-color: var(--dark-key-bg-t3);
+  color: var(--light-yellow-text);
+}
+
+body.t3 button:active .front,
+body.t3 button.pressed .front {
+  background-color: var(--dark-key-hover-bg-t3);
+}
+
+body.t3 .equal {
+  background-color: var(--key-shadow-toggle-t3);
+}
+
+body.t3 .equal .front {
+  background-color: var(--key-bg-toggle-t3);
+  color: white;
+}
+
+body.t3 .equal:active .front {
+  background-color: var(--key-bg-hover-toggle-t3);
+}
+
+body.t3 .delete,
+body.t3 .reset {
+  background-color: var(--key-shadow-t3);
+}
+
+body.t3 .delete .front,
+body.t3 .reset .front {
+  background-color: var(--key-bg-t3);
+  color: white;
+}
+
+body.t3 .delete:active .front,
+body.t3 .reset:active .front {
+  background-color: var(--key-bg-hover-t3);
+}
+
+body.t3 input[type="range"] {
+  background-color: var(--screen-bg-t3);
+}
+
+body.t3 input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--key-bg-toggle-t3);
+}
+
+body.t3 input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: var(--key-bg-hover-toggle-t3);
+}
+
+@media (max-width: 600px) {
+  .display {
+    width: 350px;
+  }
+  .keys {
+    width: 350px;
+    gap: 15px;
+  }
+}
