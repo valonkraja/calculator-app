@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 10px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="title">
+        <span>calc</span>
+        <div class="theme">
+          <span>1 2 3</span>
+          <div>
+            <span>THEME</span>
+            <input
+              type="range"
+              name="theme-slider"
+              id="slider"
+              class="slider"
+              min="1"
+              max="3"
+              value="1"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="display">0</div>
+      <div class="keys">
+        <button value="7" class="btn">
+          <span class="front">7</span>
+        </button>
+        <button value="8" class="btn">
+          <span class="front">8</span>
+        </button>
+        <button value="9" class="btn">
+          <span class="front">9</span>
+        </button>
+        <button value="delete" class="btn delete">
+          <span class="front delete">DEL</span>
+        </button>
+        <button value="4" class="btn">
+          <span class="front">4</span>
+        </button>
+        <button value="5" class="btn">
+          <span class="front">5</span>
+        </button>
+        <button value="6" class="btn">
+          <span class="front">6</span>
+        </button>
+        <button value="+" class="btn op">
+          <span class="front">+</span>
+        </button>
+        <button value="1" class="btn">
+          <span class="front">1</span>
+        </button>
+        <button value="2" class="btn">
+          <span class="front">2</span>
+        </button>
+        <button value="3" class="btn">
+          <span class="front">3</span>
+        </button>
+        <button value="-" class="btn op">
+          <span class="front">-</span>
+        </button>
+        <button value="." class="btn dot">
+          <span class="front">.</span>
+        </button>
+        <button value="0" class="btn zero" disabled>
+          <span class="front">0</span>
+        </button>
+        <button value="/" class="btn op">
+          <span class="front">/</span>
+        </button>
+        <button value="x" class="btn op">
+          <span class="front">x</span>
+        </button>
+        <button value="reset" class="btn reset">
+          <span class="front reset">RESET</span>
+        </button>
+        <button value="=" class="btn equal">
+          <span class="front equal">=</span>
+        </button>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/valonkraja">Valon Kraja</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
