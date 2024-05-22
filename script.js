@@ -142,6 +142,9 @@ keys.addEventListener("click", function (e) {
     }
 
     formatNumber(res.toString());
+    curr = res.toString();
+    temp = null;
+    res = null;
   }
 
   if (btn.value === "delete") {
